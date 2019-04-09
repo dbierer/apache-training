@@ -1,0 +1,6 @@
+Header add Cache-Control "no-cache, no-store, must-revalidate"
+Header add Pragma "no-cache"
+Header add Expires "0"
+RewriteEngine on
+RewriteBase "/maptest/"
+RewriteRule "^/maptest/(.*)" "${loglevels:$1|NOTFOUND}" [L,R]

@@ -1,0 +1,25 @@
+# Turn off browser cache so that you can see the results after making changes
+Header add Cache-Control "no-cache, no-store, must-revalidate"
+Header add Pragma "no-cache"
+Header add Expires "0"
+
+# Turn on rewriting for this directory
+RewriteEngine on
+
+# Original Rules
+RewriteRule "original/people/(.*)" "/basetest/images/width_100/people/$1" [L]
+RewriteRule "original/animals/(.*)" "/basetest/images/width_100/animals/$1" [L]
+RewriteRule "original/vehicles/(.*)" "/basetest/images/width_100/vehicles/$1" [L]
+
+# Same Thing Using "RewriteBase"
+#RewriteBase "/basetest/images/width_100/"
+
+# Just have to change 1 line to switch images
+# Do not have to change the HTML
+#RewriteBase "/basetest/images/width_200/"
+#RewriteBase "/basetest/images/width_300/"
+
+# Rules without specifying a base
+#RewriteRule "original/people/(.*)" "people/$1" [L]
+#RewriteRule "original/animals/(.*)" "animals/$1" [L]
+#RewriteRule "original/vehicles/(.*)" "vehicles/$1" [L]
