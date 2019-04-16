@@ -26,13 +26,7 @@ cd /home/vagrant/apache-training
 chmod +x ./copy.sh
 ./copy.sh
 ```
-* Set permissions for the apache user (which defaults to "daemon"):
-```
-chown -R vagrant:daemon /home/vagrant
-chmod -R 775 /home/vagrant
-chown -R vagrant:daemon /var/www
-chmod -R 775 /var/www
-```
+    * NOTE: this script also sets permissions for the apache user (which defaults to "daemon"):
 
 ## Refresh the files in the repository
 After each class session the files in this repository will be updated.  To perform a refresh, proceed as follows:
@@ -53,13 +47,7 @@ git pull
 ```
 ./copy.sh
 ```
-* Set permissions for the apache user (which defaults to "daemon"):
-```
-chown -R vagrant:daemon /home/vagrant
-chmod -R 775 /home/vagrant
-chown -R vagrant:daemon /var/www
-chmod -R 775 /var/www
-```
+    * NOTE: this script also sets permissions for the apache user (which defaults to "daemon"):
 
 ## Directory Structure
 * `home/vagrant`
@@ -67,7 +55,7 @@ chmod -R 775 /var/www
 * `var/www`
   * Contains files which should be placed in `/var/www`
   * This assumes that you have set the web server's `DocumentRoot` to `/var/www`
-  * If that is not the case, substitute `/var/www` with whatever you have set to be the `DocumentRoot` 
+  * If that is not the case, substitute `/var/www` with whatever you have set to be the `DocumentRoot` in `/usr/local/apache2/conf/httpd.conf` in the VM
 * `/usr/local/apache2/conf/extra`
   * Contains solutions to labs + examples of configuration scripts
   
@@ -138,7 +126,9 @@ chmod -R 775 /var/www
 │       │   │   └── hello.pl
 │       │   └── two
 │       │       └── hello.pl
-│       ├── content
+│       ├── downloads
+│       │   ├── gettysburg_address.pdf
+│       │   ├── romeo_and_juliet.pdf
 │       │   ├── tarzan.epub
 │       │   └── tarzan.pdf
 │       ├── errors
@@ -151,16 +141,18 @@ chmod -R 775 /var/www
 │       │   ├── 6.html
 │       │   ├── 7.html
 │       │   └── index.html
-│       ├── images
+│       ├── graphics
 │       │   ├── animals
 │       │   │   ├── cat.png
 │       │   │   └── dog.png
+│       │   ├── index.html
 │       │   ├── people
 │       │   │   ├── man.png
 │       │   │   └── woman.png
 │       │   └── vehicles
 │       │       ├── car.png
 │       │       └── truck.png
+│       ├── index.html
 │       ├── maptest
 │       │   ├── 0.html
 │       │   ├── 1.html
@@ -196,12 +188,13 @@ chmod -R 775 /var/www
 │                   └── test.conf
 └── var
     └── www
-        ├── contents
-        │   ├── gettysburg_address.pdf
+        ├── downloads
         │   ├── index.html
-        │   ├── romeo_and_juliet.pdf
-        │   ├── tarzan.epub
-        │   └── tarzan.pdf
+        │   ├── pdf
+        │   │   ├── gettysburg_address.pdf
+        │   │   ├── romeo_and_juliet.pdf
+        │   │   └── tarzan.pdf
+        │   └── tarzan.epub
         ├── header
         │   └── index.html
         ├── homepage.mobile.html
@@ -224,6 +217,10 @@ chmod -R 775 /var/www
         │   └── index.html
         ├── super_secret
         │   └── index.html
+        ├── temporary
+        │   └── index.html
         ├── test.php
         └── work_in_progress
+
+56 directories, 104 files
 ```
