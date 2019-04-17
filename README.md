@@ -2,11 +2,63 @@
 
 This repository contains infrastructure and configuration file examples which match the Apache Fundamentals course.
 
-## Setup
-* Use the script `copy.sh` to copy files to the right place:
+## Clone this repository:
+* As the normal user "vagrant", open a terminal window
+* Change to the home directory `/home/vagrant`:
 ```
-chmod +x copy.sh
+cd /home/vagrant
+```
+* Clone the repository:
+```
+git clone https://github.com/dbierer/apache-training
+```
+* You will see a new directory: `/home/vagrant/apache-training`
+* Change to super user.  Password is "vagrant"
+```
+su
+```
+* Change to the directory for the newly cloned repository:
+```
+cd /home/vagrant/apache-training
+```
+* Copy the files to the right places using the new shell script:
+```
+chmod +x ./copy.sh
 ./copy.sh
+```
+* Set permissions for the apache user (which defaults to "daemon"):
+```
+chown -R vagrant:daemon /home/vagrant
+chmod -R 775 /home/vagrant
+chown -R vagrant:daemon /var/www
+chmod -R 775 /var/www
+```
+
+## Refresh the files in the repository
+After each class session the files in this repository will be updated.  To perform a refresh, proceed as follows:
+* Open a terminal window
+* Change to super user.  Password is "vagrant"
+```
+su
+```
+* Change to the directory for the repository:
+```
+cd /home/vagrant/apache-training
+```
+* Refresh the files
+```
+git pull
+```
+* Copy the files to the right places using the shell script:
+```
+./copy.sh
+```
+* Set permissions for the apache user (which defaults to "daemon"):
+```
+chown -R vagrant:daemon /home/vagrant
+chmod -R 775 /home/vagrant
+chown -R vagrant:daemon /var/www
+chmod -R 775 /var/www
 ```
 
 ## Directory Structure
