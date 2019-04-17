@@ -3,6 +3,6 @@ print "Content-type: text/html\n\n";
 print "<!DOCTYPE html>";
 print "<html>";
 print "<body>";
-print "<h1>Emergency</h1>";
+print "<h1>Debug</h1>";
 print "</body>";
 print "</html>";
