@@ -72,6 +72,7 @@ chmod -R 775 /var/www
   * Contains solutions to labs + examples of configuration scripts
   
 ## Directory Tree
+```
 ├── README.md
 ├── copy.sh
 ├── home
@@ -225,3 +226,4 @@ chmod -R 775 /var/www
         │   └── index.html
         ├── test.php
         └── work_in_progress
+```
